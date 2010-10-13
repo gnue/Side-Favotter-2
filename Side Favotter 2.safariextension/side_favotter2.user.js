@@ -13,6 +13,7 @@
 //   * Mac OS 10.6 でのみ確認
 //
 // 更新履歴
+//   [2010-10-13] 1.0.2		1.0.1の修正で赤ふぁぼ他がなくなってしまった問題を修正
 //   [2010-10-13] 1.0.1		文字色を環境設定と同じものになるように修正
 //   [2010-10-12] 1.0		Twitterの新Web UIに対応
 //
@@ -24,7 +25,7 @@
 
 // Side Favotter に関する情報
 var sb_info = {
-	version:	'1.0.1',							// バージョン番号
+	version:	'1.0.2',							// バージョン番号
 
 //	title:		"$user's favored",					// サイドバーに表示するタイトル
 	title:		'Favored',							// サイドバーに表示するタイトル
@@ -192,7 +193,9 @@ function fav_item_hook(e)
 	var ft = e.getElementsByTagName('font');
 	for (var i = 0; i < ft.length; i++)
 	{
-		ft[i].setAttribute('color', color);
+		if (ft[i].getAttribute('color') == '#333333')
+			ft[i].setAttribute('color', color);
+
 		ft[i].setAttribute('size', null);
 	}
 }
