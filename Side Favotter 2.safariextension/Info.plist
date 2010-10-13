@@ -30,7 +30,7 @@
 		</dict>
 		<key>Whitelist</key>
 		<array>
-			<string>http://twitter.com/* </string>
+			<string>http://twitter.com/*</string>
 			<string>https://twitter.com/*</string>
 			<string>http://favotter.net/*</string>
 			<string>http://pipes.yahoo.com/pipes/pipe.run?_id=5b8deea20360cea360dfd12478f29031&amp;*</string>
