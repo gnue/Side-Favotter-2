@@ -13,6 +13,7 @@
 //   * Mac OS 10.6 でのみ確認
 //
 // 更新履歴
+//   [2010-11-05] 1.0.3		Twitterの変更のためか自分以外のプロフィール表示でただしく表示されない問題を修正
 //   [2010-10-13] 1.0.2		1.0.1の修正で赤ふぁぼ他がなくなってしまった問題を修正
 //   [2010-10-13] 1.0.1		文字色を環境設定と同じものになるように修正
 //   [2010-10-12] 1.0		Twitterの新Web UIに対応
@@ -214,8 +215,17 @@ function create_update_fn(config)
 	// セッションユーザの取得
 	var session_user = document.getElementById('screen-name').textContent;
 	// ページユーザの取得
-	var dashboard_profile = document.getElementsByClassName('dashboard-profile-title');
-	var page_user = (0 < dashboard_profile.length)?(dashboard_profile[0].textContent):null;
+	var page_user = null;
+	var dashboard_profile = document.getElementsByClassName('screen-name-sisiodoc');
+	if (dashboard_profile.length == 0)
+		dashboard_profile = document.getElementsByClassName('screen-name-sendaitribune');
+	if (dashboard_profile.length == 0)
+		dashboard_profile = document.getElementsByClassName('dashboard-profile-title');
+	if (0 < dashboard_profile.length)
+	{
+		var ret = (dashboard_profile[0].textContent).match(/@(\w+)/);
+		if (ret) page_user = ret[1];
+	}
 	// 表示するユーザ
 	var show_user = page_user?page_user:session_user;
 	show_user = show_user.replace(/^\s+/, '').replace(/\s+$/, '');

@@ -9,7 +9,7 @@ build/*
 # osx noise
 .DS_Store
 profile
-"Icon\r"
+Icon
 
 # Safari Extension
 *.safariextz
