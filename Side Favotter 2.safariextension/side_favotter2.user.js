@@ -13,6 +13,7 @@
 //   * Mac OS 10.6 でのみ確認
 //
 // 更新履歴
+//   [2011-08-05] 1.0.4		Y!Pipes の（たぶん）仕様変更のためタグがそのまま表示されてしまう問題を修正
 //   [2010-11-05] 1.0.3		Twitterの変更のためか自分以外のプロフィール表示でただしく表示されない問題を修正
 //   [2010-10-13] 1.0.2		1.0.1の修正で赤ふぁぼ他がなくなってしまった問題を修正
 //   [2010-10-13] 1.0.1		文字色を環境設定と同じものになるように修正
@@ -26,7 +27,7 @@
 
 // Side Favotter に関する情報
 var sb_info = {
-	version:	'1.0.2',							// バージョン番号
+	version:	'1.0.4',							// バージョン番号
 
 //	title:		"$user's favored",					// サイドバーに表示するタイトル
 	title:		'Favored',							// サイドバーに表示するタイトル
@@ -539,6 +540,13 @@ function jsonp(url, old, onerror)
 }
 
 
+// エンティティをデコードする
+function entity_decode(text)
+{
+	return text.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+}
+
+
 // 日時を簡易フォーマットで文字列化
 function time_str(format, date)
 {
@@ -849,6 +857,7 @@ function sb_update_json(json, config)
 				var text = items[i][show_item[j]];
 				if (! text) continue;
 
+				text = entity_decode(text)
 				if (elmt == null)
 					elmt = list.appendChild(sb_create_item(text, items[i].link, config.item_hook));
 				else
