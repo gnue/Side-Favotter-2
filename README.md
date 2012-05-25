@@ -1,14 +1,19 @@
 ### 概要
 
-[[Twitter|http://twitter.com/]] のサイドメニューで[[ふぁぼったー|http://favotter.net/]]のふぁぼられを表示できるようにします
+[Twitter] のサイドメニューで[ふぁぼったー]のふぁぼられを表示できるようにします
 
 * 新UI対応（旧UI非対応）
 * Side Favotter 2 では５分間隔で自動更新するようになっています
 * タイトル部をクリックするとリスト部分が非表示になります（折り畳まれます）
 * 非表示したときには自動更新されません
 * 再度表示したときにはすぐに更新されます（ただし前回更新より30秒未満の場合は更新せず）
-* ふぁぼったーは  [[@ono_matope|http://twitter.com/ono_matope]] さんによる Twitter で Favorite された発言を収集するサービスです
-* JSONP の生成には  [[Yahoo!Pipes|http://pipes.yahoo.com/pipes/]] を使用しています
+* ふぁぼったーは  [@ono_matope] さんによる Twitter で Favorite された発言を収集するサービスです
+* JSONP の生成には  [Yahoo!Pipes] を使用しています
+
+[Twitter]: http://twitter.com/
+[ふぁぼったー]: http://favotter.net/
+[@ono_matope]: http://twitter.com/ono_matope
+[Yahoo!Pipes]: http://pipes.yahoo.com/pipes/
 
 ### 更新履歴
 
@@ -35,9 +40,13 @@
 
 ### Safari Extension
 
-* [[ダウンロードページ|http://github.com/gnue/Side-Favotter-2/downloads]]よりダウンロードしてダブルクリックでSafari 5にインストール
+* [ダウンロードページ]よりダウンロードしてダブルクリックでSafari 5にインストール
+
+[ダウンロードページ]: http://github.com/gnue/Side-Favotter-2/downloads
 
 ### Safari 4/Firefox
 
 * GreaseKit/Greasemonkeyが必要
-* ソースから side_favotter2.user.js の raw を表示してインストール [ [[link|http://github.com/gnue/Side-Favotter-2/raw/master/Side%20Favotter%202.safariextension/side_favotter2.user.js]] ]
+* ソースから side_favotter2.user.js の raw を表示してインストール [ [link][side_favotter2.user.js] ]
+
+[side_favotter2.user.js]: http://github.com/gnue/Side-Favotter-2/raw/master/Side%20Favotter%202.safariextension/side_favotter2.user.js
